@@ -1,0 +1,20 @@
+sharedPrime = 113
+sharedBase = 5
+
+firstSecret = 6
+secondSecret = 15
+
+A = (sharedBase**firstSecret) % sharedPrime
+B = (sharedBase ** secondSecret) % sharedPrime
+
+firstSharedSecret = (B ** firstSecret) % sharedPrime
+secondSharedSecret = (A**secondSecret) % sharedPrime
+
+print( f"""Публичное простое число: {sharedPrime}
+Публичный простой корень по модулю: {sharedBase}
+
+Публичный ключ 1: {A}
+Публичный ключ 2: {B}
+
+Общий секретный ключ вычисленный 1: {firstSharedSecret}
+Общий секретный ключ вычисленный 2: {secondSharedSecret}""")
